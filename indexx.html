@@ -1,3 +1,4 @@
+<!-- landing page -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,17 +15,20 @@
 </head>
 
 <body>
-    
+
     <div class=rectangle>
+
         <div class="logo2">
-            <img src="logo2.jpg" alt="" height="30%" width="10%"></img>
+            <img src="logoo.png" alt="" height="30%" width="10%"></img>
         </div>
-        <div class="boxcontainer">
+        <!-- <div class="boxcontainer">
             <table class="elementscontainer">
+                <a href="" target="_blank" hidden></a>
                 <tr>
                     <td>
                         <input type="text" placeholder="Search by company name, symbol or keyword" class="search">
                     </td>
+                    <div class="autocom-box"></div>
             </table>
             <td>
                 <div class="searchimg">
@@ -32,29 +36,151 @@
                 </div>
 
             </td>
-            </tr>
-
-
-
         </div>
-    </div>
-    <div class="rect2">
-        <div class="elements">
-            <div class="home">
-                <a href="http://localhost:3000/">HOME</a>
+        <script src="suggestions.js"></script>
+        <script src="searchscript.js"></script> -->
+        <div class="input-group">
+            <form autocomplete="off" action="http://localhost:3000/">
+                <div class="autocomplete" style="width:200px;">
+                    <input id="myInput" type="text" name="Company" placeholder="Search Company">
+                </div>
+                <input type="submit" name="search" placeholder="Search" value="Search">
+            </form>
+
+            <script src="suggestions.js"></script>
+            <script src="searchscript.js"></script>
+            <script>
+                autocomplete(document.getElementById("myInput"), suggestions);
+            </script>
+        </div>
+
+        <div class="rect2">
+            <div class="elements">
+                <div class="home">HOME
+                </div>
+                <div class="about">ABOUT</div>
+                <div class="marketdata">MARKET DATA</div>
+                <div class="invest">INVEST</div>
+                <div class="list">LIST</div>
+                <div class="trade">TRADE</div>
+                <!-- <div class="regulation">REGULATION</div> -->
+                <div class="learn">LEARN</div>
+                <!-- <div class="resources">RESOURCES</div> -->
+
             </div>
-            <div class="about">ABOUT</div>
-            <div class="marketdata">MARKET DATA</div>
-            <div class="invest">INVEST</div>
-            <div class="list">LIST</div>
-            <div class="trade">TRADE</div>
-            <div class="regulation">REGULATION</div>
-            <div class="learn">LEARN</div>
-            <div class="resources">RESOURCES</div>
         </div>
-    </div>
 
-<script src="myapp/src/Stock.js"></script>
+        <div class="data">
+            <div class="stock">
+                <h1>STOCK MARKET</h1>
+            </div>
+            <div class="graph">
+                <!-- <script> -->
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script type="text/javascript">
+                    google.charts.load('current', { 'packages': ['corechart'] });
+                    google.charts.setOnLoadCallback(drawChart);
+
+                    function drawChart() {
+                        var data = google.visualization.arrayToDataTable([
+                            ['Time', 'Month', 'Price'],
+                            ['9:00', 9, 400],
+                            ['10:00', 10, 460],
+                            ['11:00', 11, 1120],
+                            ['12:00', 12, 540]
+                        ]);
+
+                        var options = {
+                            title: '',
+                            hAxis: { title: 'Time', titleTextStyle: { color: '#333' } },
+                            vAxis: { minValue: 0 }
+                        };
+
+                        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+                        chart.draw(data, options);
+                    }
+                </script>
+                </head>
+            </div>
+        <!-- </div> -->
+            <div id="chart_div" style="width: 750px; height: 400px;"></div>
+            <!-- <a href="http://localhost:3003/"></a> -->
+            <!-- <a href="http://localhost:3003/"></a> -->
+
+            <div class="top">
+                <h1>TOP 5 STOCKS</h1>
+            </div>
+            <div class="tabular">
+                <table class="table">
+                    <thead>
+                        <tr>
+
+                            <div class="symbol">
+                                <th>Symbol</th>
+                            </div>
+
+                            <div class="ltp">
+                                <th>LTP</th>
+                            </div>
+
+                            <div class="chng">
+                                <th>%CHNG</th>
+                            </div>
+
+                            <div class="vol">
+                                <th>Volume</th>
+                            </div>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+
+                            <td data-label="Symbol">NESTLEIND</td>
+                            <td data-label="LTP">20,260.003</td>
+                            <td data-label="%CHNG">2.30 </td>
+                            <td data-label="Volume">76,755</td>
+                        </tr>
+
+                        <tr>
+
+                            <td data-label="Symbol">SUNPHARMA</td>
+                            <td data-label="LTP">993.00</td>
+                            <td data-label="%CHNG">1.24</td>
+                            <td data-label="Volume">42,31,753</td>
+                        </tr>
+
+                        <tr>
+
+                            <td data-label="Symbol">ITC</td>
+                            <td data-label="LTP">342.00</td>
+                            <td data-label="%CHNG">1.06</td>
+                            <td data-label="Volume">81,32,228</td>
+                        </tr>
+
+                        <tr>
+
+                            <td data-label="Symbol">DRREDDY</td>
+                            <td data-label="LTP"> 4,400.00</td>
+                            <td data-label="%CHNG">1.01 </td>
+                            <td data-label="Volume">3,07,973</td>
+                        </tr>
+                        <tr>
+
+                            <td data-label="Symbol">TITAN</td>
+                            <td data-label="LTP"> 2,609.25</td>
+                            <td data-label="%CHNG">1.00 </td>
+                            <td data-label="Volume">9,35,047</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+
+
+
+
+
 </body>
 
 
